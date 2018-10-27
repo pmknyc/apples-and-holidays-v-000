@@ -57,7 +57,7 @@ def all_winter_holiday_supplies(holiday_supplies)
   holiday_supplies.each do |season, holidays|
     season.each do |holidays, supplies_array|
       if season == :winter
-        supplies_array
+        puts supplies_array
       end
     end
   end
