@@ -73,13 +73,15 @@ end
 def all_supplies_in_holidays(holiday_hash)
   holiday_supplies.each do |season, holidays|
     puts "#{season.capitalize}:"
-      holidays.each do |holiday, supplies|
-        puts "  #{holiday.}:  #{supplies.join.capitalize}"
+    holidays.each do |holiday, supplies|
+      if holiday.include?("_")
+        puts "  #{holiday.split("_").capitalize}:  #{supplies.join(", ").capitalize}"
+      else
+        puts "  #{holiday.capitalize}:  #{supplies.join(", ").capitalize}"
+      end
     end
   end
 end
-
-
 
 # Question 7
 # return an array of holiday names (as symbols) where supply lists
